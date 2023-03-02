@@ -6,3 +6,41 @@ h1 {
     background-image: linear-gradient(to right, rgb(10,22,134),rgb(90, 135, 168));
     color: whitesmoke;
 }
+.city-search{
+    position: relative;
+    display: inline-flex;
+    text-align: center;
+    left: 0px;
+    flex-direction: column;
+    border-bottom: solid 2px black;
+    align-items: center;
+}
+.display{
+    display: flex;
+    position:relative;
+    /* flex-wrap: wrap; */
+    top: -100px;
+    left: 200px;
+    height: 220px;
+    width: 500px;
+    padding: 3px;
+    border: solid 2px black;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+    box-sizing: border-box;
+}
+.fiveday {
+    display: flex;
+    position: relative;
+    /* left: 200px; */
+    justify-content: center;
+    align-content: space-between;
+}
+.fiveday p {
+    background-color: rgb(47, 47, 152);
+    padding: 20px 10px;
+    margin: 20px;
+    text-align: center;
+    color: white;
+}
