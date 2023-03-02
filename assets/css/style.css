@@ -1,0 +1,8 @@
+h1 {
+    display: block;
+    position:relative;
+    text-align: end;
+    background-color:rgb(10,22,134);
+    background-image: linear-gradient(to right, rgb(10,22,134),rgb(90, 135, 168));
+    color: whitesmoke;
+}
