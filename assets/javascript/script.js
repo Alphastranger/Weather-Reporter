@@ -1,5 +1,5 @@
 var fiveDay = document.getElementById('fiveday')
-let apiKey = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={API key}'
+let apiKey = 'https://api.openweathermap.org/data/2.5/forecast?lat={lat}&lon={lon}&appid={d61995c5384a2851d078df3c400260ac}'
 fetch(apiKey)
     .then(function(response){
         return response.json ();
