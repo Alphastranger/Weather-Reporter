@@ -38,9 +38,13 @@ h1 {
     align-content: space-between;
 }
 .fiveday p {
+    display: flex;
     background-color: rgb(47, 47, 152);
-    padding: 20px 10px;
-    margin: 20px;
-    text-align: center;
+    width: 90px;
+    height: 150px;
+    margin: 5px;
+    padding: 5px;
+    justify-content: center;
     color: white;
+    align-items: flex-start;
 }
