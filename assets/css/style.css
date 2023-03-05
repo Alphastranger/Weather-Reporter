@@ -62,7 +62,7 @@ h1 {
     align-items: flex-start;
     flex-direction: row;
 }
-.fiveday p {
+.fiveday .days {
     display: flex;
     background-color: rgb(47, 47, 152);
     border: 2px solid black;
@@ -70,6 +70,7 @@ h1 {
     height: 150px;
     margin: 5px;
     padding: 5px;
+    text-align: center;
     justify-content: center;
     color: white;
     align-items: flex-start;
