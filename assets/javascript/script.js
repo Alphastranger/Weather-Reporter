@@ -55,7 +55,7 @@ fetch(apiKey)
         console.log(data)
         console.log(data.list[0].main.temp)
         //today's weather
-        todayTemp.textContent = 'Temp: ' + (data.list[0].main.temp-273.15) + ' degrees Celsius'
+        todayTemp.textContent = 'Temp: ' + Math.floor((((data.list[0].main.temp-273.15) * 9/5) + 32)) + ' degrees Fahrenheit'
         todayWind.textContent = 'Wind Speed: ' + data.list[0].wind.speed + " MPH"
         todayHumidity.textContent = 'Humidity: ' + data.list[0].main.humidity + '%'
         todayDate.textContent = 'Date: ' + data.list[0].dt_txt.split(' ') [0]
