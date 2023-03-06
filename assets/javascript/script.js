@@ -36,7 +36,7 @@ fetch(apiKey)
         if (data.list[0].weather[0].main === 'Clouds'){
             var weatherIcon = document.createElement('i')
             cityName.appendChild(weatherIcon)
-            weatherIcon.innerHTML = ;
+            // weatherIcon.innerHTML = ;
 
         }
 
