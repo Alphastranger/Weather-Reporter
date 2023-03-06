@@ -51,7 +51,7 @@ fetch(apiKey)
         console.log(data)
         console.log(data.list[0].main.temp)
         //today's weather
-        todayTemp.textContent = 'Temp: ' + data.list[0].main.temp + 'K degrees'
+        todayTemp.textContent = 'Temp: ' + (data.list[0].main.temp-273.15) + ' degrees Celsius'
         todayWind.textContent = 'Wind Speed: ' + data.list[0].wind.speed
         todayHumidity.textContent = 'Humidity: ' + data.list[0].main.humidity
         if (data.list[0].weather[0].main === 'Clouds'){
@@ -60,7 +60,33 @@ fetch(apiKey)
             weatherIcon.classList.add('fa-sharp')
             weatherIcon.classList.add('fa-solid')
             weatherIcon.classList.add('fa-cloud')
+        } else if (data.list[0].weather[0].main === 'Rain' || data.list[0].weather[0].main === 'Drizzle' || data.list[0].weather[0].main === 'Thunderstorm'){
+            var weatherIcon = document.createElement('i')
+            cityName.appendChild(weatherIcon)
+            weatherIcon.classList.add('fa-sharp')
+            weatherIcon.classList.add('fa-solid')
+            weatherIcon.classList.add('fa-cloud')
+        } else if (data.list[0].weather[0].main === 'Clear'){
+            var weatherIcon = document.createElement('i')
+            cityName.appendChild(weatherIcon)
+            weatherIcon.classList.add('fa-sharp')
+            weatherIcon.classList.add('fa-solid')
+            weatherIcon.classList.add('fa-sun')
+        } else if (data.list[0].weather[0].main === 'Snow') {
+            var weatherIcon = document.createElement('i')
+            cityName.appendChild(weatherIcon)
+            weatherIcon.classList.add('fa-sharp')
+            weatherIcon.classList.add('fa-solid')
+            weatherIcon.classList.add('fa-snowflake')
+        } else {
+            var weatherIcon = document.createElement('i')
+            cityName.appendChild(weatherIcon)
+            weatherIcon.classList.add('fa-sharp')
+            weatherIcon.classList.add('fa-solid')
+            weatherIcon.classList.add('fa-block-quest')
         }
+
+
         //tomorrow's weather
         let tomWeath = document.createElement('p')
         tomorrow.appendChild(tomWeath)
