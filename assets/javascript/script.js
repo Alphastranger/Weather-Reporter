@@ -98,7 +98,7 @@ fetch(apiKey)
         }
         let tomWeath = document.createElement('p')
         tomorrow.appendChild(tomWeath)
-        tomWeath.textContent = 'Temp: ' + Math.floor(((data.list[1].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[1].wind.speed +'\n' + 'Humidity: ' + data.list[1].main.humidity
+        tomWeath.textContent = data.list[1].dt_txt.split(' ') [0] + '\n' + 'Temp: ' + Math.floor(((data.list[1].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[1].wind.speed +' MPH\n' + 'Humidity: ' + data.list[1].main.humidity + '%'
         if (data.list[1].weather[0].main === 'Clouds'){
             var weatherIconTom = document.createElement('i')
             tomorrow.appendChild(weatherIconTom)
@@ -134,7 +134,7 @@ fetch(apiKey)
         //Day three weather
         let daythreeWeath = document.createElement('p')
         daythree.appendChild(daythreeWeath)
-        daythreeWeath.textContent = 'Temp: ' + Math.floor(((data.list[2].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[2].wind.speed +'\n' + 'Humidity: ' + data.list[2].main.humidity
+        daythreeWeath.textContent = data.list[2].dt_txt.split(' ') [0] + '\n' +'Temp: ' + Math.floor(((data.list[2].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[2].wind.speed +' MPH\n' + 'Humidity: ' + data.list[2].main.humidity + '%'
         if (data.list[2].weather[0].main === 'Clouds'){
             var weatherIconThr = document.createElement('i')
             daythree.appendChild(weatherIconThr)
@@ -170,7 +170,7 @@ fetch(apiKey)
         //Day four weather
         let dayfourWeath = document.createElement('p')
         dayfour.appendChild(dayfourWeath)
-        dayfourWeath.textContent = 'Temp: ' + Math.floor(((data.list[3].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[3].wind.speed +'\n' + 'Humidity: ' + data.list[3].main.humidity
+        dayfourWeath.textContent = data.list[3].dt_txt.split(' ') [0] + '\n' +'Temp: ' + Math.floor(((data.list[3].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[3].wind.speed +' MPH\n' + 'Humidity: ' + data.list[3].main.humidity + '%'
         if (data.list[3].weather[0].main === 'Clouds'){
             var weatherIconFou = document.createElement('i')
             dayfour.appendChild(weatherIconFou)
@@ -206,7 +206,7 @@ fetch(apiKey)
         //Day five weather
         let dayfiveWeath = document.createElement('p')
         dayfive.appendChild(dayfiveWeath)
-        dayfiveWeath.textContent = 'Temp: ' + Math.floor(((data.list[4].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[4].wind.speed +'\n' + 'Humidity: ' + data.list[4].main.humidity
+        dayfiveWeath.textContent = data.list[4].dt_txt.split(' ') [0] + '\n' +'Temp: ' + Math.floor(((data.list[4].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[4].wind.speed +' MPH\n' + 'Humidity: ' + data.list[4].main.humidity + '%'
         if (data.list[4].weather[0].main === 'Clouds'){
             var weatherIconFiv = document.createElement('i')
             dayfive.appendChild(weatherIconFiv)
@@ -242,7 +242,7 @@ fetch(apiKey)
         //Day six weather
         let daysixWeath = document.createElement('p')
         daysix.appendChild(daysixWeath)
-        daysixWeath.textContent = 'Temp: ' + Math.floor(((data.list[5].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[5].wind.speed +'\n' + 'Humidity: ' + data.list[5].main.humidity
+        daysixWeath.textContent = data.list[5].dt_txt.split(' ') [0] + '\n' +'Temp: ' + Math.floor(((data.list[5].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[5].wind.speed +' MPH\n' + 'Humidity: ' + data.list[5].main.humidity + '%'
         if (data.list[5].weather[0].main === 'Clouds'){
             var weatherIconSix = document.createElement('i')
             daysix.appendChild(weatherIconSix)
