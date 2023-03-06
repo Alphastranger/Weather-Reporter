@@ -30,6 +30,9 @@ function speedySearch(){
     cityName.textContent = boxValue;
 
     console.log(searchBox)
+    if (boxValue === '') {
+
+    }
 
  let geoKey = 'http://api.openweathermap.org/geo/1.0/direct?q=' + boxValue + '&limit=5&appid=a0dfdb5ddf4248081a0e3da0b4bb8938'
 fetch(geoKey)
@@ -52,8 +55,8 @@ fetch(apiKey)
         console.log(data.list[0].main.temp)
         //today's weather
         todayTemp.textContent = 'Temp: ' + (data.list[0].main.temp-273.15) + ' degrees Celsius'
-        todayWind.textContent = 'Wind Speed: ' + data.list[0].wind.speed
-        todayHumidity.textContent = 'Humidity: ' + data.list[0].main.humidity
+        todayWind.textContent = 'Wind Speed: ' + data.list[0].wind.speed + " MPH"
+        todayHumidity.textContent = 'Humidity: ' + data.list[0].main.humidity + '%'
         if (data.list[0].weather[0].main === 'Clouds'){
             var weatherIcon = document.createElement('i')
             cityName.appendChild(weatherIcon)
@@ -88,6 +91,9 @@ fetch(apiKey)
 
 
         //tomorrow's weather
+        if (tomorrow.children == true){
+            tomorrow.removeChild
+        }
         let tomWeath = document.createElement('p')
         tomorrow.appendChild(tomWeath)
         tomWeath.textContent = 'Temp: ' + data.list[1].main.temp + 'K degrees\n' + "Wind: " + data.list[1].wind.speed +'\n' + 'Humidity: ' + data.list[1].main.humidity
