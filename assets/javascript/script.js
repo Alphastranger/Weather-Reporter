@@ -15,7 +15,7 @@ var searchHistory = document.getElementById('history');
 var searchHistEl = localStorage.getItem('History');
 var boxValue = searchBox.value;
 
-if (searchHistEl.value == true) {
+if ('History' in localStorage) {
 let historyEl = document.createElement('button')
 searchHistory.appendChild(historyEl)
 historyEl.textContent = searchHistEl;
@@ -29,14 +29,8 @@ function speedySearch(){
     searHist.textContent = boxValue;
     localStorage.setItem('History', boxValue)
     cityName.textContent = boxValue;
-    searHist.addEventListener('click', function(){
-        boxValue = searHist.value;
-        speedySearch()
-    })
-
+    
     console.log(searchBox)
-    if (boxValue === '') {
-    }
 
  let geoKey = 'http://api.openweathermap.org/geo/1.0/direct?q=' + boxValue + '&limit=5&appid=a0dfdb5ddf4248081a0e3da0b4bb8938'
 fetch(geoKey)
