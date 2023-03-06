@@ -23,7 +23,7 @@ h1 {
     flex-wrap: wrap;
     left: 40px;
 }
-.search-history p{
+.search-history button{
     /* display: flex; */
     /* position: absolute; */
     /* flex-wrap: wrap; */
@@ -62,7 +62,7 @@ h1 {
     align-items: flex-start;
     flex-direction: row;
 }
-.fiveday .days {
+.days {
     display: flex;
     background-color: rgb(47, 47, 152);
     border: 2px solid black;
@@ -70,8 +70,11 @@ h1 {
     height: 150px;
     margin: 5px;
     padding: 5px;
-    text-align: center;
     justify-content: center;
     color: white;
     align-items: flex-start;
+}
+.days i{
+    position: absolute;
+    top: 10px;
 }
