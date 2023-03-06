@@ -29,10 +29,13 @@ function speedySearch(){
     searHist.textContent = boxValue;
     localStorage.setItem('History', boxValue)
     cityName.textContent = boxValue;
+    searHist.addEventListener('click', function(){
+        boxValue = searHist.value;
+        speedySearch()
+    })
 
     console.log(searchBox)
     if (boxValue === '') {
-
     }
 
  let geoKey = 'http://api.openweathermap.org/geo/1.0/direct?q=' + boxValue + '&limit=5&appid=a0dfdb5ddf4248081a0e3da0b4bb8938'
@@ -93,9 +96,12 @@ fetch(apiKey)
 
 
         //tomorrow's weather
-        if (tomorrow.children == true){
-            tomorrow.removeChild
+        function removeIfExists(selector) {
+            var x = document.querySelector(selector)
+            if (x) x.remove()
         }
+        removeIfExists('#tomorrow p')
+        removeIfExists('#tomorrow i')
         let tomWeath = document.createElement('p')
         tomorrow.appendChild(tomWeath)
         tomWeath.textContent = data.list[1].dt_txt.split(' ') [0] + '\n' + 'Temp: ' + Math.floor(((data.list[1].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[1].wind.speed +' MPH\n' + 'Humidity: ' + data.list[1].main.humidity + '%'
@@ -132,6 +138,8 @@ fetch(apiKey)
         }
 
         //Day three weather
+        removeIfExists('#daythree p')
+        removeIfExists('#daythree i')
         let daythreeWeath = document.createElement('p')
         daythree.appendChild(daythreeWeath)
         daythreeWeath.textContent = data.list[2].dt_txt.split(' ') [0] + '\n' +'Temp: ' + Math.floor(((data.list[2].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[2].wind.speed +' MPH\n' + 'Humidity: ' + data.list[2].main.humidity + '%'
@@ -168,6 +176,8 @@ fetch(apiKey)
         }
 
         //Day four weather
+        removeIfExists('#dayfour p')
+        removeIfExists('#dayfour i')
         let dayfourWeath = document.createElement('p')
         dayfour.appendChild(dayfourWeath)
         dayfourWeath.textContent = data.list[3].dt_txt.split(' ') [0] + '\n' +'Temp: ' + Math.floor(((data.list[3].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[3].wind.speed +' MPH\n' + 'Humidity: ' + data.list[3].main.humidity + '%'
@@ -204,6 +214,8 @@ fetch(apiKey)
         }
 
         //Day five weather
+        removeIfExists('#dayfive p')
+        removeIfExists('#dayfive i')
         let dayfiveWeath = document.createElement('p')
         dayfive.appendChild(dayfiveWeath)
         dayfiveWeath.textContent = data.list[4].dt_txt.split(' ') [0] + '\n' +'Temp: ' + Math.floor(((data.list[4].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[4].wind.speed +' MPH\n' + 'Humidity: ' + data.list[4].main.humidity + '%'
@@ -240,6 +252,8 @@ fetch(apiKey)
         }
 
         //Day six weather
+        removeIfExists('#daysix p')
+        removeIfExists('#daysix i')
         let daysixWeath = document.createElement('p')
         daysix.appendChild(daysixWeath)
         daysixWeath.textContent = data.list[5].dt_txt.split(' ') [0] + '\n' +'Temp: ' + Math.floor(((data.list[5].main.temp - 273.15) * 9/5) + 32) + ' degrees F\n' + "Wind: " + data.list[5].wind.speed +' MPH\n' + 'Humidity: ' + data.list[5].main.humidity + '%'
