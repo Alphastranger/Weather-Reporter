@@ -37,17 +37,21 @@ h1 {
     margin: 4px;
     border-radius: 4px;
 }
+.killme{
+    display: flex;
+    justify-content: center;
+}
 .display{
     display: flex;
     position:relative;
     flex-wrap: wrap;
     top: -100px;
-    left: 200px;
+    /* left: 200px; */
     height: 220px;
     width: 500px;
     padding: 3px;
     border: solid 2px black;
-    justify-content: flex-start;
+    justify-content: center;
     align-items: flex-start;
     flex-direction: column;
     box-sizing: border-box;
@@ -56,8 +60,8 @@ h1 {
     display: flex;
     position: relative;
     flex-wrap: wrap;
-    left: 180px;
-    /* justify-content: center; */
+    /* left: 180px; */
+    justify-content: center;
     align-content: space-between;
     align-items: flex-start;
     flex-direction: row;
@@ -65,6 +69,7 @@ h1 {
 .days {
     display: flex;
     background-color: rgb(47, 47, 152);
+    flex-wrap: wrap;
     border: 2px solid black;
     width: 90px;
     height: 150px;
@@ -75,6 +80,27 @@ h1 {
     align-items: flex-start;
 }
 .days i{
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    align-self: center;
+    align-content: center;
     position: absolute;
     top: 10px;
+}
+@media screen and (max-width: 900px){
+    .display, .fiveday {
+        position: relative;
+        left: 0;
+        top: 80px;
+        flex-wrap: wrap
+    }
+    .display{
+        flex-direction: column;
+        height: 100%;
+        width: 100%;
+    }
+    .search-history{
+        position: relative;
+    }
 }

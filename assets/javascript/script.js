@@ -49,7 +49,7 @@ function speedySearch() {
 
     console.log(searchBox)
 
-    let geoKey = 'http://api.openweathermap.org/geo/1.0/direct?q=' + boxValue + '&limit=5&appid=a0dfdb5ddf4248081a0e3da0b4bb8938'
+    let geoKey = 'https://api.openweathermap.org/geo/1.0/direct?q=' + boxValue + '&limit=5&appid=a0dfdb5ddf4248081a0e3da0b4bb8938'
     fetch(geoKey)
         .then(function (response) {
             return response.json();
@@ -60,7 +60,7 @@ function speedySearch() {
             var longitude = data[0].lon;
 
 
-            let apiKey = 'http://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=a0dfdb5ddf4248081a0e3da0b4bb8938'
+            let apiKey = 'https://api.openweathermap.org/data/2.5/forecast?lat=' + latitude + '&lon=' + longitude + '&appid=a0dfdb5ddf4248081a0e3da0b4bb8938'
             fetch(apiKey)
                 .then(function (response) {
                     return response.json();
