@@ -80,13 +80,7 @@ h1 {
     align-items: flex-start;
 }
 .days i{
-    display: flex;
-    align-items: flex-start;
-    justify-content: center;
-    align-self: center;
-    align-content: center;
     position: absolute;
-    top: 10px;
 }
 @media screen and (max-width: 900px){
     .display, .fiveday {
