@@ -68,6 +68,14 @@ function speedySearch() {
                 .then(function (data) {
                     console.log(data)
                     console.log(data.list[0].main.temp)
+                    let dateToday = dayjs();
+                    // dateToday.format('D-M-YYYY')
+                    let tomorrowDate = dateToday.add(1, 'day')
+                    let threeDate = dateToday.add(2, 'day')
+                    let fourDate = dateToday.add(3, 'day')
+                    let fiveDate = dateToday.add(4, 'day')
+                    let sixDate = dateToday.add(5, 'day')
+                    console.log(tomorrowDate)
                     //today's weather
                     todayTemp.textContent = 'Temp: ' + Math.floor((((data.list[0].main.temp - 273.15) * 9 / 5) + 32)) + ' degrees Fahrenheit'
                     todayWind.textContent = 'Wind Speed: ' + data.list[0].wind.speed + " MPH"
@@ -115,7 +123,7 @@ function speedySearch() {
                     removeIfExists('#tomorrow i')
                     let tomWeath = document.createElement('p')
                     tomorrow.appendChild(tomWeath)
-                    tomWeath.textContent = data.list[1].dt_txt.split(' ')[0] + '\n' + 'Temp: ' + Math.floor(((data.list[1].main.temp - 273.15) * 9 / 5) + 32) + ' degrees F\n' + "Wind: " + data.list[1].wind.speed + ' MPH\n' + 'Humidity: ' + data.list[1].main.humidity + '%'
+                    tomWeath.textContent = tomorrowDate.format('DD-MM-YYYY') + '\n' + 'Temp: ' + Math.floor(((data.list[1].main.temp - 273.15) * 9 / 5) + 32) + ' degrees F\n' + "Wind: " + data.list[1].wind.speed + ' MPH\n' + 'Humidity: ' + data.list[1].main.humidity + '%'
                     if (data.list[1].weather[0].main === 'Clouds') {
                         var weatherIconTom = document.createElement('i')
                         tomorrow.appendChild(weatherIconTom)
@@ -153,7 +161,7 @@ function speedySearch() {
                     removeIfExists('#daythree i')
                     let daythreeWeath = document.createElement('p')
                     daythree.appendChild(daythreeWeath)
-                    daythreeWeath.textContent = data.list[2].dt_txt.split(' ')[0] + '\n' + 'Temp: ' + Math.floor(((data.list[2].main.temp - 273.15) * 9 / 5) + 32) + ' degrees F\n' + "Wind: " + data.list[2].wind.speed + ' MPH\n' + 'Humidity: ' + data.list[2].main.humidity + '%'
+                    daythreeWeath.textContent = threeDate.format('DD-MM-YYYY') + '\n' + 'Temp: ' + Math.floor(((data.list[2].main.temp - 273.15) * 9 / 5) + 32) + ' degrees F\n' + "Wind: " + data.list[2].wind.speed + ' MPH\n' + 'Humidity: ' + data.list[2].main.humidity + '%'
                     if (data.list[2].weather[0].main === 'Clouds') {
                         var weatherIconThr = document.createElement('i')
                         daythree.appendChild(weatherIconThr)
@@ -191,7 +199,7 @@ function speedySearch() {
                     removeIfExists('#dayfour i')
                     let dayfourWeath = document.createElement('p')
                     dayfour.appendChild(dayfourWeath)
-                    dayfourWeath.textContent = data.list[3].dt_txt.split(' ')[0] + '\n' + 'Temp: ' + Math.floor(((data.list[3].main.temp - 273.15) * 9 / 5) + 32) + ' degrees F\n' + "Wind: " + data.list[3].wind.speed + ' MPH\n' + 'Humidity: ' + data.list[3].main.humidity + '%'
+                    dayfourWeath.textContent = fourDate.format('DD-MM-YYYY') + '\n' + 'Temp: ' + Math.floor(((data.list[3].main.temp - 273.15) * 9 / 5) + 32) + ' degrees F\n' + "Wind: " + data.list[3].wind.speed + ' MPH\n' + 'Humidity: ' + data.list[3].main.humidity + '%'
                     if (data.list[3].weather[0].main === 'Clouds') {
                         var weatherIconFou = document.createElement('i')
                         dayfour.appendChild(weatherIconFou)
@@ -229,7 +237,7 @@ function speedySearch() {
                     removeIfExists('#dayfive i')
                     let dayfiveWeath = document.createElement('p')
                     dayfive.appendChild(dayfiveWeath)
-                    dayfiveWeath.textContent = data.list[4].dt_txt.split(' ')[0] + '\n' + 'Temp: ' + Math.floor(((data.list[4].main.temp - 273.15) * 9 / 5) + 32) + ' degrees F\n' + "Wind: " + data.list[4].wind.speed + ' MPH\n' + 'Humidity: ' + data.list[4].main.humidity + '%'
+                    dayfiveWeath.textContent = fiveDate.format('DD-MM-YYYY') + '\n' + 'Temp: ' + Math.floor(((data.list[4].main.temp - 273.15) * 9 / 5) + 32) + ' degrees F\n' + "Wind: " + data.list[4].wind.speed + ' MPH\n' + 'Humidity: ' + data.list[4].main.humidity + '%'
                     if (data.list[4].weather[0].main === 'Clouds') {
                         var weatherIconFiv = document.createElement('i')
                         dayfive.appendChild(weatherIconFiv)
@@ -267,7 +275,7 @@ function speedySearch() {
                     removeIfExists('#daysix i')
                     let daysixWeath = document.createElement('p')
                     daysix.appendChild(daysixWeath)
-                    daysixWeath.textContent = data.list[5].dt_txt.split(' ')[0] + '\n' + 'Temp: ' + Math.floor(((data.list[5].main.temp - 273.15) * 9 / 5) + 32) + ' degrees F\n' + "Wind: " + data.list[5].wind.speed + ' MPH\n' + 'Humidity: ' + data.list[5].main.humidity + '%'
+                    daysixWeath.textContent = sixDate.format('DD-MM-YYYY') + '\n' + 'Temp: ' + Math.floor(((data.list[5].main.temp - 273.15) * 9 / 5) + 32) + ' degrees F\n' + "Wind: " + data.list[5].wind.speed + ' MPH\n' + 'Humidity: ' + data.list[5].main.humidity + '%'
                     if (data.list[5].weather[0].main === 'Clouds') {
                         var weatherIconSix = document.createElement('i')
                         daysix.appendChild(weatherIconSix)
